@@ -52,5 +52,34 @@ public class selenium_buoi2 {
         // cú pháp: //tên thẻ[@thuộc tính1="giá trị thuộc tính1" and @thuộc tính2="giá trị thuộc tính2"]
         //ví dụ: //h3[@class="MuiTypography-root MuiTypography-h3" and text()="Đăng Ký"]
         //cú pháp: //tên thẻ[@thuộc tính1="giá trị thuộc tính1" or @thuộc tính2="giá trị thuộc tính2"]
+
+        //----------------nâng cao -----------------
+        // parent: tìm thẻ cha của thẻ html
+        //cú pháp: //thẻ con[thuộc tính="giá trị thuộc tính"]/parent::tên thẻ cha
+        //ví dụ: //h3[text()="Đăng Ký"]/parent::a
+
+        //child: thẻ con của thẻ html
+        //cú pháp: //thẻ cha[thuộc tính="giá trị thuộc tính"]/child::tên thẻ con
+        //ví dụ: //a[@href="/sign-up"]/child::h3
+//        h3, h2, img, span, p: node thường của html
+        //svg: node đặc biệt của html, dùng để hiện thị icon
+        //ví dụ://a[@href="/sign-in"]/child::*[local-name()='svg']
+        //tag svg: *[local-name()='svg']
+
+        //following sibling - preceding sibling:tìm các thẻ cùng cấp với thẻ html trước hoặc sau thẻ html
+        //được xác định
+        //cú pháp: //thẻ[thuộc tính="giá trị thuộc tính"]/following-sibling::tên thẻ cùng cấp
+        //cú pháp: //thẻ[thuộc tính="giá trị thuộc tính"]/preceding-sibling::tên thẻ cùng cấp
+        //tên thẻ cung cấp: là thẻ cần tìm sau thẻ html được xác định
+        //ví dụ: //a[@href="/sign-up"]/preceding-sibling::a
+
+        //ancestor và descendant: tìm các thẻ tổ tiên hoặc con của thẻ html được xác định
+        //cú pháp: //thẻ[thuộc tính="giá trị thuộc tính"]/ancestor::tên thẻ tổ tiên
+        //cú pháp: //thẻ[thuộc tính="giá trị thuộc tính"]/descendant::tên thẻ con
+        //ví dụ: //a[@href="/sign-up"]/ancestor::header
+
+        //normalize-space: loại bỏ khoảng trắng thừa ở đầu và cuối giá trị text của thẻ html
+        // "   Đăng Ký   " -> "Đăng Ký"
+        //h3[text()="Đăng ký"] -> h3[normalize-space(text())="Đăng Ký"]
     }
 }
